@@ -1,4 +1,8 @@
 # Monocular_Depth_Estimation
+# Note - Please run the code through the google colab links below:
+# Part 1 Link: https://colab.research.google.com/drive/19m7JwNRthMrGmxOjdrStyZTWtb15U82G?usp=sharing
+# Part 2 Link: https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv?usp=sharing
+
 
 ## Monocular Depth Estimation Project for Neural Networks at Notre Dame
 
