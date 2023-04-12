@@ -4,8 +4,10 @@
 
 For this project, I am researching current methods of monocular depth estimation. In general, Monocular Depth Estimation is the computer vision task that predicts the depth value of an image, given a single RGB image as input. This type of deep learning is very computationally expensive, but it is something that we use in my lab - the autonomous systems lab, since we work with UAVs that may need to use monocular depth estimators for image segmentation or obstacle avoidance. Because my primary research is on the software engineering side of cyber-physical systems, I am exploring how these types of networks are built for the first time. 
 
-For the first stage of the project, I was able to build my own monocular depth estimator from scratch in tensorflow, based off of the U-NET Convolutional Network. I then built a U-NET model from scratch and using it with the oxford pets keras dataset. Then, for the second part of this project, I found a better version of the U-NET model that uses a similar version of my own. I made the code work on one of the larger datasets I previously mentioned, the NYU data set.
+For the first stage of the project, I was able to build my own monocular depth estimator from scratch in tensorflow, based off of the U-NET Convolutional Network. I then built my U-NET model and tested it on the oxford pets keras dataset, with the KERAS tutorial. For the second part of this project, I found a better version of the U-NET model that uses a similar version of my own. I re-trained the model on one of the larger datasets I previously mentioned, the NYU data set: https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html . The NYU dataset is a massive dataset comprised of indoor images along with a ground truth depth label. This set has been widely used in computer vision research and is a benchmark for most depth estimation papers. For my first project solution, I wanted to fully understand how to build such models, and be able to train one of the pre-made model examples on a larger and more difficult dataset, which I was able to do. 
 
+
+### Part 1 
 Beginning with my scratch implementation and training of a simple U-NET model, this network was originally a state of the art network introduced for image segmentation, and it works quite well when trained in a supervised manner with images with ground truth depth maps. The architecture that I built from scratch follows the general guidelines described in the paper: https://arxiv.org/pdf/1505.04597.pdf . 
 
 <img width="825" alt="Screen Shot 2023-04-11 at 8 18 26 PM" src="https://user-images.githubusercontent.com/69804201/231315707-9f21185c-b6cd-46f2-bfda-ee8d3527abcb.png">
@@ -18,10 +20,17 @@ One can see that the simple architecture follows the exact specifications of the
 
 ![Screen Shot 2023-04-11 at 9 06 16 PM](https://user-images.githubusercontent.com/69804201/231320889-4e8ad597-7cbf-4543-9387-3db674a3d92c.png)
 
+For my initial experiment we use the adam optimizer, which tends to perform very well for a variety of problems. We also use the loss function of "sparse_categorical_crossentropy", which is utilized when we have truth labels properly formated. This is used in multi-class classifications problems that have single-labels, such as this dataset. I followed the example from KERAS in implementing this code, and I have attached the sources to the google colab. 
+
 I ran the code for 100 Epochs which took a decent amount of time due to the structure of the U-NET. For the purposes of the preliminary phase of the final project, I trained in google colab, although for my final submission I plan on switching to the CRC, since even a simple U-NET took a very long time. Below are the results from the training over a smaller 100 Epochs:
 
+![Screen Shot 2023-04-12 at 2 17 18 AM](https://user-images.githubusercontent.com/69804201/231367932-45c3751d-f706-40ce-82dd-fcfea15f8d34.png)
 
+We can see that in training the U-NET architecture, the model does not overfit after 100 epochs, and it actually keeps improving. For this model, we use the loss functions provided by the keras tutorial, so really this portion of the project was for me to learn from a detailed level how to implement a monocular depth estimator. 
 
+Here is an example of the visualized prediction, and we see that the resulting prediction is quite nice, although there is plenty of work to be done.
+![Screen Shot 2023-04-12 at 2 18 25 AM](https://user-images.githubusercontent.com/69804201/231368128-e2318f91-c84d-4d7e-9efa-d5e8278199d9.png)
 
+Here is the link for the google colab where I ran my experiments : https://colab.research.google.com/drive/19m7JwNRthMrGmxOjdrStyZTWtb15U82G?usp=sharing
 
 
