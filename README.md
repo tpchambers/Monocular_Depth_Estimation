@@ -2,7 +2,7 @@
 ## Note - Please run the code through the google colab links below:
 ## Part 1 Link: https://colab.research.google.com/drive/19m7JwNRthMrGmxOjdrStyZTWtb15U82G?usp=sharing
 ## Part 2 Link: https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv?usp=sharing
-
+## For the second part of this submission, I saved the model checkpoints as I trained on GPU to the google drive folder shared called "NNProject_TheoChambers" (link for this along with instructions below in Part 2). 
 
 ## Monocular Depth Estimation Project for Neural Networks at Notre Dame
 
@@ -10,7 +10,7 @@ For this project, I am researching current methods of monocular depth estimation
 
 For the first stage of the project, I was able to build my own monocular depth estimator from scratch in tensorflow, based off of the U-NET Convolutional Network. I then built my U-NET model and tested it on the oxford pets keras dataset, with the KERAS tutorial to test its functionality on a more simple dataset. For the second part of this project, I found a better version of the U-NET model that uses a version that resembles my own model structure. I then re-trained the model on one of the larger datasets I previously mentioned, the NYU data set: https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html . The NYU dataset is a massive dataset comprised of indoor images along with a ground truth depth label per image. This set has been widely used in computer vision research and is a benchmark for most monocular depth estimation papers. For my first project solution, I wanted to fully understand how to build such models, and be able to train one of the pre-made model examples on a larger and more difficult dataset, which I was able to do. I originally cited the DEMON paper in my earlier dataset submission portion, and the NYUV2 dataset is a critical dataset mentioned as part of the paper. I discuss below what the next steps for my project will entail. 
 
-## For the second part of this submission, I saved the model checkpoints as I trained on GPU to the google drive folder shared called "NNProject_TheoChambers" (link for this along with instructions below). 
+
 
 
 ### Part 1 
