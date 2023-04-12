@@ -16,5 +16,10 @@ One can see that the simple architecture follows the exact specifications of the
 
 ![Screen Shot 2023-04-11 at 9 06 16 PM](https://user-images.githubusercontent.com/69804201/231320889-4e8ad597-7cbf-4543-9387-3db674a3d92c.png)
 
+I ran the code for 100 Epochs which took a decent amount of time due to the structure of the U-NET. Below are the results from the training:
+
+
+
+
 
 
