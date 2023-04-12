@@ -8,6 +8,9 @@ For the first stage of the project, I was able to build my own monocular depth e
 
 
 ### Part 1 
+
+CODE TO RUN : https://colab.research.google.com/drive/19m7JwNRthMrGmxOjdrStyZTWtb15U82G?usp=sharing
+
 Beginning with my scratch implementation and training of a simple U-NET model, this network was originally a state of the art network introduced for image segmentation, and it works quite well when trained in a supervised manner with images with ground truth depth maps. The architecture that I built from scratch follows the general guidelines described in the paper: https://arxiv.org/pdf/1505.04597.pdf . 
 
 <img width="825" alt="Screen Shot 2023-04-11 at 8 18 26 PM" src="https://user-images.githubusercontent.com/69804201/231315707-9f21185c-b6cd-46f2-bfda-ee8d3527abcb.png">
@@ -30,7 +33,4 @@ We can see that in training the U-NET architecture, the model does not overfit a
 
 Here is an example of the visualized prediction, and we see that the resulting prediction is quite nice, although there is plenty of work to be done.
 ![Screen Shot 2023-04-12 at 2 18 25 AM](https://user-images.githubusercontent.com/69804201/231368128-e2318f91-c84d-4d7e-9efa-d5e8278199d9.png)
-
-Here is the link for the google colab where I ran my experiments : https://colab.research.google.com/drive/19m7JwNRthMrGmxOjdrStyZTWtb15U82G?usp=sharing
-
 
