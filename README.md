@@ -37,7 +37,7 @@ Here is an example of the visualized prediction, and we see that the resulting p
 
 ### Part 2 
 
-## VALIDATION CODE TO RUN: https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv?usp=sharing
+VALIDATION CODE TO RUN: https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv?usp=sharing
 
 After building my U-NET model from scratch and fully understanding how a basic depth estimator functions, I found a pre-existing comprehensive model at this link: https://keras.io/examples/vision/depth_estimation/ . I had to completely change the data preprocessing and was able to run this model (which is similar to my U-NET) on the novel NYU depth dataset. 
 
