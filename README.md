@@ -25,6 +25,7 @@ One can see that the simple architecture follows the exact specifications of the
 
 ![Screen Shot 2023-04-11 at 9 06 16 PM](https://user-images.githubusercontent.com/69804201/231320889-4e8ad597-7cbf-4543-9387-3db674a3d92c.png)
 
+#### Experiment Details
 For my initial experiment we use the adam optimizer, which tends to perform very well for a variety of problems. We also use the loss function of "sparse_categorical_crossentropy", which is utilized when we have truth labels properly formated. This is used in multi-class classifications problems that have single-labels, such as this dataset. I followed the example from KERAS in implementing this code, and I have attached the sources to the google colab. 
 
 I ran the code for 100 Epochs which took a decent amount of time due to the structure of the U-NET. For the purposes of the preliminary phase of the final project, I trained in google colab, although for my final submission I plan on switching to the CRC, since even a simple U-NET took a very long time. Below are the results from the training over a smaller 100 Epochs:
