@@ -39,7 +39,16 @@ Here is an example of the visualized prediction, and we see that the resulting p
 
 VALIDATION CODE TO RUN: https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv?usp=sharing
 
-After building my U-NET model from scratch and fully understanding how a basic depth estimator functions, I found a pre-existing comprehensive model at this link: https://keras.io/examples/vision/depth_estimation/ . I had to completely change the data preprocessing and was able to run this model (which is similar to my U-NET) on the novel NYU depth dataset. 
+INSTRUCTIONS:
+Please run the code in the google colab above, which I ran multiple times using a GPU over the past two weeks. In order to access the appropriate file paths, all you have to do is go to this location in your google drive: https://drive.google.com/drive/folders/1S0x6ON5WSBlfyk8j7YtHKxnY9rXswUgH?usp=share_link . This contains the larger dataset that I will be running on this model. Once you click on this, then you need to right click and add a shortcut to your drive like so:
+
+![Screen Shot 2023-04-12 at 2 45 02 AM](https://user-images.githubusercontent.com/69804201/231373584-4198ad3f-7d9f-450d-a0b7-3d8b0b5fb20f.png)
+
+I have tested with a friend, and this should allow you to access the correct path in your own google drive account, when running the colab file! 
+
+
+#### Introduction:
+After building my U-NET model from scratch and fully understanding how a basic depth estimator functions, I found a pre-existing comprehensive model at this link: https://keras.io/examples/vision/depth_estimation/ . I had to completely change the data preprocessing and was able to run this model (which is similar to my U-NET) on the novel NYU depth dataset. It took a significant amount of debugging and playing around with the data to get it to work on the different dataset. 
 
 #### Justification:
 The architecture of this model is similar to my original U-NET. However, here, the authors use batch normalization after using leaky relu in the upsampling  and downsampling portions. In class, we learned that batch normalization is able to stabilize the outputs of the feature space, and therefore aid the learning process by normalizing the outputs. This extra step is a smart addition to the U-NET code. Additionally, the authors of this example use leaky relu. Leaky relu is able to prevent vanishing gradients by simply returning the input if the input is positive, but if the input is negative, it will return a lesser value, but one that is not 0. Therefore, for negative inputs we will not have the problem of vanishing gradients when the derivative is taken during back propagation. The combination of these two aids the training process, but other than that, the U-NET example used for this new dataset resembles my original implementation. 
