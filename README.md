@@ -17,6 +17,7 @@ Beginning with my scratch implementation and training of a simple U-NET model, t
 
 The network architecture has two different paths as stated by the article: a contrasting path, a bottleneck connecting the two, and an expansive one. The idea is that one should reduce the feature space of the input image, or encode the image to a lower feature space while maintaining depth. This follows the structure of an encoder. The contracting path (just discussed) is then connected to the expansive path through the middle bottleneck, which should retain the prominent features of the layer, similar to a generative model where we seek to reduce the feature space to a different space, then reconstruct. Thus, the expansive path will restructure the image and learn the true depth of the image, learning the feature representation of the pixels.
 
+#### Justication:
 For the first part of the project, I replicated the architecture from the paper using tensorflow. I built my own replication of the simple U-NET structure using only standard tensorflow functions, then incorporated my architecture into a KERAS tutorial on the oxford pets dataset. My network architecture was built as follows: 
 
 One can see that the simple architecture follows the exact specifications of the paper. The contracted path has two 3x3 convolutions followed by a ReLU activation, and a 2x2 max pooling with a stride of 2 for the downsampling step, doubling the features as we progress. The expansive path upsamples the features (as described by the paper), where we have then have a 2x2 convolution block, reducing the features by two, followed by a concatenation, then two more convolutional blocks. It took me some time to get a close replication of the exact model from scratch. Here is the architecture that I designed below! 
@@ -33,4 +34,14 @@ We can see that in training the U-NET architecture, the model does not overfit a
 
 Here is an example of the visualized prediction, and we see that the resulting prediction is quite nice, although there is plenty of work to be done.
 ![Screen Shot 2023-04-12 at 2 18 25 AM](https://user-images.githubusercontent.com/69804201/231368128-e2318f91-c84d-4d7e-9efa-d5e8278199d9.png)
+
+### Part 2 
+
+## VALIDATION CODE TO RUN: https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv?usp=sharing
+
+After building my U-NET model from scratch and fully understanding how a basic depth estimator functions, I found a pre-existing comprehensive model at this link: https://keras.io/examples/vision/depth_estimation/ . I had to completely change the data preprocessing and was able to run this model (which is similar to my U-NET) on the novel NYU depth dataset. 
+
+#### Justification:
+The architecture of this model is similar to my original U-NET. However, here, the authors use batch normalization after using leaky relu in the upsampling  and downsampling portions. In class, we learned that batch normalization is able to stabilize the outputs of the feature space, and therefore aid the learning process by normalizing the outputs. This extra step is a smart addition to the U-NET code. Additionally, the authors of this example use leaky relu. Leaky relu is able to prevent vanishing gradients by simply returning the input if the input is positive, but if the input is negative, it will return a lesser value, but one that is not 0. Therefore, for negative inputs we will not have the problem of vanishing gradients when the derivative is taken during back propagation. The combination of these two aids the training process, but other than that, the U-NET example used for this new dataset resembles my original implementation. 
+
 
