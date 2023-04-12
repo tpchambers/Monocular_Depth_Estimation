@@ -13,5 +13,7 @@ The network architecture has two different paths as stated by the article: a con
 For the first part of the project, I replicated the architecture from the paper using tensorflow. I built my own replication of the simple U-NET structure from scratch, then incorporated my architecture into a KERAS tutorial on the oxford pets dataset. My network architecture was built as follows: 
 
 
-One can see that the simple architecture follows the exact specifications of the paper. The contracted path has two 3x3 convolutions followed by a ReLU activation, and a 2x2 max pooling with a stride of 2 for the downsampling step, doubling the features as we progress. The expansive path upsamples the features (as described by the paper), where we have a 2x2 convolution block, reducing the features by two, followed by a concatenation, then the two convolutional blocks. In KERAS, I found that CONV2dtranspose upsamples by creating features, and this can actually be larned.
+One can see that the simple architecture follows the exact specifications of the paper. The contracted path has two 3x3 convolutions followed by a ReLU activation, and a 2x2 max pooling with a stride of 2 for the downsampling step, doubling the features as we progress. The expansive path upsamples the features (as described by the paper), where we have a 2x2 convolution block, reducing the features by two, followed by a concatenation, then the two convolutional blocks. It took me a decent time to get a close replication of the exact model from scratch. Here is the architecture that I designed below! 
+
+![Screen Shot 2023-04-11 at 9 06 16 PM](https://user-images.githubusercontent.com/69804201/231320889-4e8ad597-7cbf-4543-9387-3db674a3d92c.png)
 
