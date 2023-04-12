@@ -9,3 +9,9 @@ For the first stage of the project, I was able to build my own monocular depth e
 <img width="825" alt="Screen Shot 2023-04-11 at 8 18 26 PM" src="https://user-images.githubusercontent.com/69804201/231315707-9f21185c-b6cd-46f2-bfda-ee8d3527abcb.png">
 
 The network architecture has two different paths as stated by the article: a contrasting path, a bottleneck connecting the two, and an expansive one. The idea is that one should reduce the feature space of the input image, or encode the image to a lower feature space while maintaining depth. Therefore, this follows the idea of an encoder. The contracting path just discussed is then connected to the expansive path through the middle bottleneck, which should retain the prominent features of the layer, similar to a generative model where we seek to reduce the feature space to a different space "z", then rebuild. Thus, the expansive path will restructure the image and learn the true depth of the image, learning the feature representation of the pixels.
+
+For the first part of the project, I replicated the architecture from the paper using tensorflow. I built my own replication of the simple U-NET structure from scratch, then incorporated my architecture into a KERAS tutorial on the oxford pets dataset. My network architecture was built as follows: 
+
+
+One can see that the simple architecture follows the exact specifications of the paper. The contracted path has two 3x3 convolutions followed by a ReLU activation, and a 2x2 max pooling with a stride of 2 for the downsampling step, doubling the features as we progress. The expansive path upsamples the features (as described by the paper), where we have a 2x2 convolution block, reducing the features by two, followed by a concatenation, then the two convolutional blocks. In KERAS, I found that CONV2dtranspose upsamples by creating features, and this can actually be larned.
+
