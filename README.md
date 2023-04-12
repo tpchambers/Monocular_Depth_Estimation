@@ -68,3 +68,7 @@ The architecture of this model is similar to my original U-NET. However, here, t
 To compare the relative accuracy I used MSE and also RSME, which are outputted in the google colab file on the validation set. In researching this topic, most general evaluations are done using MSE and RMSE, since they can provide a fairly stable comparison between two images. The MSE is simply the squared differences between all the pixels of the two images in comparison. The lower the MSE, the stronger the model is. The RMSE on the other hand uses Euclidean distance, which I also output in the colab file. For the purposes of the first solution, I used a portion of the image training set as the validation, since the set is so large and I could not run it in the CRC in time. For the final project I will change this to have a more comprehensive evaluation. 
 
 
+
+#### Commentary 
+
+
