@@ -92,7 +92,7 @@ updated MSE with fine-tuned model on larger training subset:
 <img width="572" alt="Screen Shot 2023-05-09 at 11 25 01 PM" src="https://github.com/tpchambers/Monocular_Depth_Estimation/assets/69804201/581076b1-ce73-44c8-a690-c2260e8f261e">. 
 
 
-updated MSE with fine-tuned model using test set:
+updated MSE with fine-tuned model using test set: .17
 
 
 
