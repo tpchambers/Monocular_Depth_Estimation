@@ -1,6 +1,7 @@
 # Monocular_Depth_Estimation Final Project
 # Author - Theo Chambers 
-# [Final Solution](#Final-Solution)
+# [Final Solution](#Final-Solution).
+
 ## Note - Please run the code through the google colab links below:
 ## Part 1 Link: https://colab.research.google.com/drive/19m7JwNRthMrGmxOjdrStyZTWtb15U82G?usp=sharing
 ## Part 2 Link: https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv?usp=sharing
@@ -72,6 +73,7 @@ To compare the relative accuracy I used MSE, which is outputted in the google co
 #### Commentary 
 The initial results on the validation set is adequate and should perform well with a more challenging dataset. With the smaller training set, I was able to achieve good performance and set the foundation for the larger dataset.
 
-## Final Solution
+#Final Solution
+
 Here will be the final solution.
 
