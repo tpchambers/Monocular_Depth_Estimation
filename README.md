@@ -82,7 +82,8 @@ To test the accuracy I used the same classification as before, or the MSE, which
 
 Original MSE on training subset (submission 1):
 
-<img width="572" alt="Screen Shot 2023-05-09 at 10 44 55 PM" src="https://github.com/tpchambers/Monocular_Depth_Estimation/assets/69804201/94628ccb-07dc-4241-9f49-e0ff67262af9">
+<img width="572" alt="Screen Shot 2023-05-09 at 10 44 55 PM" src="https://github.com/tpchambers/Monocular_Depth_Estimation/assets/69804201/94628ccb-07dc-4241-9f49-e0ff67262af9">. 
+
 
 Submission 2 MSE metrics:
 
