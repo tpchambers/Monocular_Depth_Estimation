@@ -1,6 +1,6 @@
 # Monocular_Depth_Estimation Final Project
 # Author - Theo Chambers 
-# Bewlo is the [final solution](#Final-Solution).
+# Click here for the [final solution](#Final-Solution).
 
 ## Note - Please run the code through the google colab links below:
 ## Part 1 Link: https://colab.research.google.com/drive/19m7JwNRthMrGmxOjdrStyZTWtb15U82G?usp=sharing
