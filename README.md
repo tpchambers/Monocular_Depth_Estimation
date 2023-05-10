@@ -73,6 +73,5 @@ To compare the relative accuracy I used MSE, which is outputted in the google co
 The initial results on the validation set is adequate and should perform well with a more challenging dataset. With the smaller training set, I was able to achieve good performance and set the foundation for the larger dataset.
 
 ## Final Solution
-
-
+Here will be the final solution.
 
