@@ -5,7 +5,7 @@
 ## Note - Please run the code through the google colab links below:
 ## Part 1 Link: https://colab.research.google.com/drive/19m7JwNRthMrGmxOjdrStyZTWtb15U82G?usp=sharing
 ## Part 2 Link: https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv?usp=sharing
-## For the second part of this submission, I saved the model checkpoints as I trained on GPU to the google drive folder shared called "NNProject_TheoChambers" (link for this along with instructions below in [Part 2](#Part-2). 
+## For the second part of this submission, I saved the model checkpoints as I trained on GPU to the google drive folder shared called "NNProject_TheoChambers" (link for this along with instructions below in [Instructions](#Instructions). 
 
 ## Monocular Depth Estimation Project for Neural Networks at Notre Dame
 
@@ -46,7 +46,7 @@ Here is an example of the visualized prediction, and we see that the resulting p
 
 I did not evaluate this on a test set, since this was an exercise for me to learn how to implement a monocular depth estimator from scratch. In the next part below, I will test a pre-made model on a different and more novel dataset.
 
-### Part 2 
+### Instructions
 
 VALIDATION CODE TO RUN: https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv?usp=sharing
 Link showing how I trained the model: https://colab.research.google.com/drive/1z0HSGh-iCFntSEwYC9fzxdgBxVaKrztz?usp=sharing 
@@ -63,15 +63,7 @@ I have tested with a friend, and this should allow you to access the correct pat
 After building my U-NET model from scratch and fully understanding how a basic depth estimator functions, I found a pre-existing comprehensive model at this link: https://keras.io/examples/vision/depth_estimation/ . I had to adjust the data preprocessing and was able to run this model (which is similar to my U-NET) on the more research oriented NYUV2 depth dataset. It took a significant amount of debugging and playing around with the data to get it to work on the different dataset. The NYUV2 data set that I downloaded is around 4 GB in total, with RGB indoor photos next to a labeled ground truth depth map. 
 
 #### Justification:
-The architecture of this model is similar to my original U-NET. However, here, the authors use batch normalization after using leaky relu in the upsampling  and downsampling portions. In class, we learned that batch normalization is able to stabilize the outputs of the feature space, and therefore aid the learning process by normalizing the outputs. This extra step will allow the model to train faster. Additionally, the authors of this example use leaky relu. Leaky relu is able to prevent vanishing gradients by simply returning the input if the input is positive, but if the input is negative, it will return a lesser value, but one that is not equal to 0. Therefore, for negative inputs we will not have the problem of vanishing gradients when the derivative is taken during back propagation. The combination of these two aids the training process, but other than that, the U-NET example used for this new dataset closely resembles my implementation. 
-
-#### Classification Accuracy:
-
-To compare the relative accuracy I used MSE, which is outputted in the google colab file on the validation set. In researching this topic, most general evaluations are done using MSE, since it can provide a fairly stable comparison between two images. The MSE is simply the squared differences between all the pixels of the two images in comparison. The lower the MSE, the stronger and more robust the model. I used a smaller portion of the image training set as the validation, since the set is so large and I could not run it in on the CRC in time. For the final project I will change this to have a more comprehensive evaluation using more GPUS.
-
-
-#### Commentary 
-The initial results on the validation set is adequate and should perform well with a more challenging dataset. With the smaller training set, I was able to achieve good performance and set the foundation for the larger dataset.
+The architecture of this model is similar to my original U-NET. However, here, the authors use batch normalization after using leaky relu in the upsampling  and downsampling portions. In class, we learned that batch normalization is able to stabilize the outputs of the feature space, and therefore aid the learning process by normalizing the outputs. This extra step will allow the model to train faster. Additionally, the authors of this example use leaky relu. Leaky relu is able to prevent vanishing gradients by simply returning the input if the input is positive, but if the input is negative, it will return a lesser value, but one that is not equal to 0. Therefore, for negative inputs we will not have the problem of vanishing gradients when the derivative is taken during back propagation. The combination of these two aids the training process, but other than that, the U-NET example 
 
 # Final Solution
 
@@ -82,7 +74,7 @@ https://github.com/tpchambers/Monocular_Depth_Estimation/assets/69804201/3719166
 
 ## Source Code
 
-If not already done, please follow the instructions above explained in [Part 2](#Part-2) to setup the directory properly.
+If not already done, please follow the instructions above explained in [Part 2](#Instructions) to setup the directory properly.
 
 Training portion: https://colab.research.google.com/drive/1z0HSGh-iCFntSEwYC9fzxdgBxVaKrztz#scrollTo=Ht8rnqAWPkmj 
 
@@ -91,6 +83,11 @@ Testing portion:  https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_z
 ## Report
 
 For my final solution, I used the same NYUV2 depth dataset, which is a massive 4 GB dataset comprised of indoor RGB camera photos with ground truth depth maps. For the final solution, I then fine-tuned my model on a much larger portion of the dataset, and was able to properly train it on over 25,000 images over the past couple of weeks. This is in comparison to my initial solution where I trained it the model on a smaller subset of images. The original solution was also tested using a separate subset of the training samples as the validation, whereas in the final solution I tested on both the actual test set of the dataset (which contains around 700 images), and a separate portion of the training in order to compare to the previous training round. This can be seen in my link above. I believe that the differences are substantial enough to test the difference of my final solution since I am exposing the model to completely different types of images using the actual test set from the NYUV2 dataset https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html, and I also tested it on a separate training portion which it had never seen before. 
+
+To test the accuracy I used the same classification as before, or the MSE, which is outputted in the google colab file on the validation set. In researching this topic, most general evaluations are done using MSE, since it can provide a fairly stable comparison between two images. The MSE is simply the squared differences between all the pixels of the two images in comparison. The lower the MSE, the stronger and more robust the model. I used a smaller portion of the image training set as the validation, since the set is so large and I could not run it in on the CRC in time. For the final project I will change this to have a more comprehensive evaluation using more GPUS. Originally, I had obtained this MSE on the training subset:
+<img width="572" alt="Screen Shot 2023-05-09 at 10 44 55 PM" src="https://github.com/tpchambers/Monocular_Depth_Estimation/assets/69804201/94628ccb-07dc-4241-9f49-e0ff67262af9">
+This is because I
+
 
 
 
