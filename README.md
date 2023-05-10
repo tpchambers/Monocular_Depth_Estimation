@@ -75,5 +75,12 @@ The initial results on the validation set is adequate and should perform well wi
 
 # Final Solution
 
-Here will be the final solution.
+## Brief Presentation (Extra Credit):
+
+
+
+https://github.com/tpchambers/Monocular_Depth_Estimation/assets/69804201/37191660-3e0c-43c3-9d5c-e3c090166498
+
+
+
 
