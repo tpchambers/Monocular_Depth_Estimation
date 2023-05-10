@@ -2,19 +2,14 @@
 # Author - Theo Chambers 
 # Click here for the [final solution](#Final-Solution).
 
-## Note - Please run the code through the google colab links below:
-## Part 1 Link: https://colab.research.google.com/drive/19m7JwNRthMrGmxOjdrStyZTWtb15U82G?usp=sharing
-## Part 2 Link: https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv?usp=sharing
-## For the second part of this submission, I saved the model checkpoints as I trained on GPU to the google drive folder shared called "NNProject_TheoChambers" (link for this along with instructions below in [Instructions](#Instructions). 
-
-## Monocular Depth Estimation Project for Neural Networks at Notre Dame
+## Monocular Depth Estimation Project for Neural Networks at Notre Dame Introduction
 
 For this project, I am researching current methods of monocular depth estimation. In general, Monocular Depth Estimation is the term for a computer vision framework that predicts the depth of an image given a single RGB image as input. This type of deep learning is very computationally expensive, but it is something that we use in my lab - the autonomous systems lab. We work with UAVs that may need to use monocular depth estimators for image segmentation or obstacle avoidance in a variety of circumstances. Because my primary research is on the software engineering side of cyber-physical systems, I am exploring how these types of networks are built for the first time.
 
 For the first stage of the project, I was able to build my own monocular depth estimator from scratch in tensorflow, based off of the U-NET Convolutional Network. After building my U-NET model, I tested the architecture on the oxford pets keras dataset, with the KERAS tutorial to test its functionality on a more simple dataset. For the second part of this project, I found a better version of the U-NET model that uses an architecture resembling my own model structure. I then re-trained the model on one of the larger datasets I previously mentioned, the NYU data set: https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html . The NYU dataset is a massive dataset comprised of indoor images along with a ground truth depth label per each image. This set has been widely used in computer vision research and is a benchmark for most monocular depth estimation papers that I have seen. For my first project solution, I wanted to fully understand how to build such models, and be able to train one of the pre-made model examples on a larger and more difficult dataset, which I was able to do. I originally cited the DEMON paper in my earlier dataset submission, and the NYUV2 dataset is a critical dataset mentioned as part of the paper. I then discuss what the next steps for my final project will entail. 
 
 
-### Part 1 
+### Scratch U-Net 
 
 CODE TO RUN : https://colab.research.google.com/drive/19m7JwNRthMrGmxOjdrStyZTWtb15U82G?usp=sharing
 
@@ -51,7 +46,6 @@ I did not evaluate this on a test set, since this was an exercise for me to lear
 VALIDATION CODE TO RUN: https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv?usp=sharing
 Link showing how I trained the model: https://colab.research.google.com/drive/1z0HSGh-iCFntSEwYC9fzxdgBxVaKrztz?usp=sharing 
 
-INSTRUCTIONS:
 Please run the code in the google colab above, which I ran multiple times using a GPU over the past two weeks. In order to access the appropriate file paths, all you have to do is go to this location in your google drive: https://drive.google.com/drive/folders/1S0x6ON5WSBlfyk8j7YtHKxnY9rXswUgH?usp=share_link . This contains the larger dataset that I will be running on this model. Once you click on this, then you need to right click and add a shortcut to your drive like so:
 
 ![Screen Shot 2023-04-12 at 2 45 02 AM](https://user-images.githubusercontent.com/69804201/231373584-4198ad3f-7d9f-450d-a0b7-3d8b0b5fb20f.png)
@@ -74,7 +68,7 @@ https://github.com/tpchambers/Monocular_Depth_Estimation/assets/69804201/3719166
 
 ## Source Code
 
-If not already done, please follow the instructions above explained in [Part 2](#Instructions) to setup the directory properly.
+If not already done, please follow the instructions explained in [Part 2](#Instructions) to setup the directory properly.
 
 Training portion: https://colab.research.google.com/drive/1z0HSGh-iCFntSEwYC9fzxdgBxVaKrztz#scrollTo=Ht8rnqAWPkmj 
 
@@ -82,11 +76,15 @@ Testing portion:  https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_z
 
 ## Report
 
-For my final solution, I used the same NYUV2 depth dataset, which is a massive 4 GB dataset comprised of indoor RGB camera photos with ground truth depth maps. For the final solution, I then fine-tuned my model on a much larger portion of the dataset, and was able to properly train it on over 25,000 images over the past couple of weeks. This is in comparison to my initial solution where I trained it the model on a smaller subset of images. The original solution was also tested using a separate subset of the training samples as the validation, whereas in the final solution I tested on both the actual test set of the dataset (which contains around 700 images), and a separate portion of the training in order to compare to the previous training round. This can be seen in my link above. I believe that the differences are substantial enough to test the difference of my final solution since I am exposing the model to completely different types of images using the actual test set from the NYUV2 dataset https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html, and I also tested it on a separate training portion which it had never seen before. 
+For my final solution, I used the same NYUV2 depth dataset, which as described before is a massive 4 GB dataset comprised of indoor RGB camera photos with ground truth depth maps. For the final solution, I fine-tuned my model on a much larger portion of the dataset, and was able to properly train it on over 25,000 images over the past couple of weeks. This is in comparison to my initial solution where I trained the model on a smaller subset of images. The original solution was also tested using a separate subset of the training samples as the validation, whereas in the final solution I tested on both the actual test set of the dataset (which contains around 700 images), and a separate portion of the training in order to compare to the previous training round. This can be seen in my links above. I believe that the differences are substantial enough to test the difference of my final solution since I am exposing the model to completely different types of images using the actual test set as recommended from the official NYUV2 dataset https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html, and I also tested it on a separate training portion which it had never seen before. 
 
 To test the accuracy I used the same classification as before, or the MSE, which is outputted in the google colab file on the validation set. In researching this topic, most general evaluations are done using MSE, since it can provide a fairly stable comparison between two images. The MSE is simply the squared differences between all the pixels of the two images in comparison. The lower the MSE, the stronger and more robust the model. I used a smaller portion of the image training set as the validation, since the set is so large and I could not run it in on the CRC in time. For the final project I will change this to have a more comprehensive evaluation using more GPUS. Originally, I had obtained this MSE on the training subset:
+
 <img width="572" alt="Screen Shot 2023-05-09 at 10 44 55 PM" src="https://github.com/tpchambers/Monocular_Depth_Estimation/assets/69804201/94628ccb-07dc-4241-9f49-e0ff67262af9">
-This is because I
+
+I then tested using the test set, here is the MSE classification:
+
+
 
 
 
