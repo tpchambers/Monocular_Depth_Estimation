@@ -82,7 +82,7 @@ https://github.com/tpchambers/Monocular_Depth_Estimation/assets/69804201/3719166
 
 ## Source Code
 
-If not already done, please follow the instructions above explained in [part two](#Part-Two) to setup the directory properly.
+If not already done, please follow the instructions above explained in [Part 2](#Part-2) to setup the directory properly.
 
 Training portion: https://colab.research.google.com/drive/1z0HSGh-iCFntSEwYC9fzxdgBxVaKrztz#scrollTo=Ht8rnqAWPkmj
 Testing portion:  https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv
