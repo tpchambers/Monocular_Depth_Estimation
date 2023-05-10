@@ -88,5 +88,9 @@ Training portion: https://colab.research.google.com/drive/1z0HSGh-iCFntSEwYC9fzx
 
 Testing portion:  https://colab.research.google.com/drive/15OGtLp5-RHcZZ9I6zd9_zjrpdV5Xm8xv
 
+## Report
+
+For my final solution, I used the same NYUV2 depth dataset, which is a massive 4 GB dataset comprised of indoor RGB camera photos with ground truth depth maps. For the final solution, I fine-tuned my model on a much larger portion of the dataset, and was able to properly train it on over 25,000 images over the past couple of weeks compared to my initial solution where I trained it on a smaller subset of images. The original solution was also tested using a small separate portion of the training samples as the validation, whereas in the final solution I tested on both the actual test set of the dataset (which contains around 700 images), and a separate portion of the training. This can be seen in my link above. The differences are substantial to test the difference of my final solution since I am exposing the model to completely different types of images using the actual test set from the NYUV2 dataset, and I also was curious to try to test it on a separate training parition as well since I had fine tuned it over a much larger set.
+
 
 
