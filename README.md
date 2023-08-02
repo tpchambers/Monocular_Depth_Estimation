@@ -1,5 +1,4 @@
-# Monocular_Depth_Estimation Final Project
-# Author - Theo Chambers 
+# Monocular Depth Estimation 
 # Click here for the [final solution](#Final-Solution).
 
 ## Monocular Depth Estimation Project for Neural Networks
