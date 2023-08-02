@@ -61,10 +61,6 @@ The architecture of this model is similar to my original U-NET. However, here, t
 
 # Final Solution
 
-## Brief Presentation (Extra Credit):
-
-https://github.com/tpchambers/Monocular_Depth_Estimation/assets/69804201/37191660-3e0c-43c3-9d5c-e3c090166498
-
 
 ## Source Code
 
